@@ -1,11 +1,9 @@
-import Button from "./components/ui/Button";
+import QRCodeWrapper from "./components/qr-code/QRCodeWrapper";
 
 const App = () => {
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <Button fit onClick={() => console.log("Clicked")}>
-        Click me
-      </Button>
+    <div className="w-full h-screen flex justify-center items-center flex-col bg-zinc-100">
+      <QRCodeWrapper />
     </div>
   );
 };
