@@ -8,7 +8,7 @@ export const INITIAL_STATE: QRCodeState = {
   margin: 4,
   dotsOptions: {
     color: "#000000",
-    type: "extra-rounded",
+    type: "square",
     roundSize: false,
   },
   cornersSquareOptions: {
