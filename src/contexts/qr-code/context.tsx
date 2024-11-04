@@ -4,10 +4,10 @@ import { qrCodeReducer } from "./reducer";
 import { INITIAL_STATE } from "./config";
 import { useActions } from "./actions";
 
-interface QRCodeContextType {
+type QRCodeContextType = {
   state: QRCodeState;
   action: React.Dispatch<QRCodeAction>;
-}
+} & ReturnType<typeof useActions>;
 
 const QRCodeContext = createContext<QRCodeContextType | undefined>(undefined);
 
