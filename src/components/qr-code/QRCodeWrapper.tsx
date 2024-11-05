@@ -1,5 +1,6 @@
 import { useQRCode } from "../../contexts/qr-code/context";
 import Step from "../ui/Step";
+import QRCodeOptions from "./QRCodeOptions";
 import QRCodeSidebar from "./QRCodeSidebar";
 
 const QRCodeWrapper = () => {
@@ -23,6 +24,7 @@ const QRCodeWrapper = () => {
           />
           <div className="border-t-[1px] border-zinc-200"></div>
           <Step step="2" message="Design your QR" />
+          <QRCodeOptions />
         </div>
         <QRCodeSidebar />
       </div>
