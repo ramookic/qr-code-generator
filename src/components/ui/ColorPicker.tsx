@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 type ColorPickerProps = {
   color: string;
@@ -8,6 +9,7 @@ type ColorPickerProps = {
 
 const ColorPicker: React.FC<ColorPickerProps> = ({ color, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useOutsideClick(() => setIsOpen(false));
 
   const handleColorChange = (color: string) => {
     onChange(color);
@@ -24,12 +26,14 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ color, onChange }) => {
         />
         <button
           style={{ backgroundColor: color }}
-          className={"w-[36px] h-[36px] rounded-tr-lg rounded-br-lg"}
+          className={
+            "w-[36px] h-[36px] rounded-tr-lg rounded-br-lg border-l border-l-zinc-200"
+          }
           onClick={() => setIsOpen(!isOpen)}
         ></button>
       </div>
       {isOpen && (
-        <div className="absolute bottom-10 z-50">
+        <div ref={ref} className="absolute bottom-10 z-50">
           <HexColorPicker color={color} onChange={handleColorChange} />
         </div>
       )}

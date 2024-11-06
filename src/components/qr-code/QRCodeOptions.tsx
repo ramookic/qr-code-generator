@@ -30,7 +30,7 @@ const QRCodeOptions = () => {
               "font-medium px-4 py-2 text-sm rounded-lg",
               el.title === selectedOption
                 ? "bg-blue-50 text-blue-500"
-                : " text-zinc-500 hover:bg-blue-50"
+                : " text-zinc-500 hover:bg-blue-50 hover:text-blue-500"
             )}
             key={el.id}
           >
